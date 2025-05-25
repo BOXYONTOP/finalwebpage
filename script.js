@@ -3,13 +3,22 @@
   const confirmationMessage = document.getElementById('confirmationMessage');
   const dateInput = document.getElementById('date');
   const timeInput = document.getElementById('time');
+  const sessionInput = document.getElementById('session');
 
+  // Set today's date as min for date input
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
   const dd = String(today.getDate()).padStart(2, '0');
   const minDate = `${yyyy}-${mm}-${dd}`;
   dateInput.min = minDate;
+
+  const SESSION_PRICES = {
+    "Individual Photo - $45": 45.00,
+    "Team Photos - $85": 85.00,
+    "Individual Mixtape Video - $85": 85.00,
+    "Team Mixtape Video - $125": 125.00
+  };
 
   bookingForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -45,23 +54,33 @@
       return;
     }
 
+    const sessionType = sessionInput.value;
+    const sessionPrice = SESSION_PRICES[sessionType];
+    if (!sessionPrice) {
+      alert("Please select a valid session.");
+      return;
+    }
+
     const bookingDetails = {
       name: bookingForm.name.value.trim(),
       email: bookingForm.email.value.trim(),
       phone: bookingForm.phone.value.trim(),
       location: bookingForm.location.value.trim(),
       date: dateInput.value,
-      time: timeInput.value
+      time: timeInput.value,
+      session: sessionType
     };
 
     localStorage.setItem('lastBooking', JSON.stringify(bookingDetails));
 
-    const customData = encodeURIComponent(`Phone:${bookingDetails.phone};Location:${bookingDetails.location};Date:${bookingDetails.date};Time:${bookingDetails.time}`);
-    const baseUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=photographer@example.com&item_name=Photography+Session+120+Minutes&amount=150.00&currency_code=USD";
+    const customData = encodeURIComponent(`Phone:${bookingDetails.phone};Location:${bookingDetails.location};Date:${bookingDetails.date};Time:${bookingDetails.time};Session:${bookingDetails.session}`);
+    const baseUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=photographer@example.com";
+    const itemName = encodeURIComponent(bookingDetails.session);
+    const amount = sessionPrice.toFixed(2);
     const returnUrl = "https://yourwebsite.com/thankyou.html";
     const cancelUrl = "https://yourwebsite.com/cancel.html";
 
-    let paymentUrl = baseUrl + "&custom=" + customData;
+    let paymentUrl = `${baseUrl}&item_name=${itemName}&amount=${amount}&currency_code=USD&custom=${customData}`;
     paymentUrl += "&return=" + encodeURIComponent(returnUrl);
     paymentUrl += "&cancel_return=" + encodeURIComponent(cancelUrl);
 

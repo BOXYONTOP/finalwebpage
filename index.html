@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Session | PC13 Media</title>
+  <title>Welcome to PC13 Media</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -12,6 +13,7 @@
       <h1 class="logo">PC13 Media</h1>
       <nav>
         <a href="#">Home</a>
+        <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
         <a href="#booking">Book</a>
         <a href="#">Contact</a>
@@ -21,8 +23,24 @@
 
   <section class="hero">
     <div class="container">
-      <h2>Book a Photography Session</h2>
-      <p>High-quality visuals. Easy scheduling. Secure payment.</p>
+      <img src="https://drive.google.com/uc?export=view&id=1L0sqArS5Q-pw6XCKZ88ZF_vIOfAsI8Q6" alt="Portfolio Picture" class="hero-image" />
+      <h2>Welcome to PC13 Media</h2>
+      <p>Your destination for high-quality, professional photography sessions.</p>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m the creator behind PC13 Media. With a passion for storytelling through photography,
+        I specialize in capturing moments that last a lifetime. Whether it's sports action, lifestyle shoots, or professional portraits,
+        I bring creativity, experience, and dedication to every session.
+      </p>
+      <p>
+        Based in [Your City], I’ve worked with athletes, influencers, and everyday people looking to document special moments with style and substance.
+        Let’s collaborate and create something amazing together.
+      </p>
     </div>
   </section>
 
@@ -63,12 +81,15 @@
     <div class="container">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 1" />
-        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 2" />
-        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 3" />
-        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 4" />
-        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 5" />
-        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 6" />
+        <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Image 1">
+          <img src="https://via.placeholder.com/400x300" alt="Gallery Image 1" />
+        </a>
+        <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Image 2">
+          <img src="https://via.placeholder.com/400x300" alt="Gallery Image 2" />
+        </a>
+        <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" data-title="Image 3">
+          <img src="https://via.placeholder.com/400x300" alt="Gallery Image 3" />
+        </a>
       </div>
     </div>
   </section>
@@ -80,5 +101,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>

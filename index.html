@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Session | PC13 Media</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">PC13 Media</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Book a Photography Session</h2>
+      <p>High-quality visuals. Easy scheduling. Secure payment.</p>
+    </div>
+  </section>
+
+  <section class="form-section" id="booking">
+    <div class="container">
+      <form id="bookingForm">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-row">
+          <label for="location">Shoot Location</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+        <div class="form-row">
+          <label for="date">Session Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-row">
+          <label for="time">Start Time</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <button type="submit" class="btn">Proceed to Payment</button>
+      </form>
+      <p id="confirmationMessage" class="confirmation"></p>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 1" />
+        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 2" />
+        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 3" />
+        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 4" />
+        <img src="https://via.placeholder.com/400x500" alt="Gallery Image 5" />
+        <img src="https://via.placeholder.com/400x400" alt="Gallery Image 6" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 PC13 Media. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

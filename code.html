@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artistry Photography - Book & Pay</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap');
+
+    :root {
+      --primary-color: #222;
+      --secondary-color: #aaa;
+      --accent-color: #d13f3f;
+      --background-color: #fafafa;
+      --font-primary: 'Playfair Display', serif;
+      --font-secondary: 'Open Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background-color);
+      font-family: var(--font-secondary);
+      color: var(--primary-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #a13131;
+    }
+
+    header {
+      position: relative;
+      height: 70vh;
+      color: white;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 3rem auto 4rem auto;
+      padding: 0 1rem;
+      flex-grow: 1;
+    }
+
+    h2.section-title {
+      font-family: var(--font-primary);
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+      margin-bottom: 3rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover,
+    .gallery img:focus {
+      transform: scale(1.05);
+      box-shadow: 0 10px 22px rgb(0 0 0 / 0.15);
+    }
+
+    /* Booking info */
+    .booking-info {
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+      color: var(--secondary-color);
+    }
+    .booking-info strong {
+      color: var(--primary-color);
+    }
+
+    /* Form */
+    form {
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+      border-radius: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+      width: 100%;
+      padding: 0.35rem 0.5rem;
+      font-size: 1rem;
+      border: 1.5px solid var(--secondary-color);
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s ease;
+      font-family: var(--font-secondary);
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+    }
+
+    button {
+      background: var(--accent-color);
+      color: white;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button:hover,
+    button:focus {
+      background: #a13131;
+      outline: none;
+    }
+
+    .confirmation {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #d1f0d1;
+      border: 1.5px solid #4caf50;
+      border-radius: 6px;
+      color: #2d6a2d;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.25rem 1rem;
+      border-top: 1px solid #e0e0e0;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+      font-family: var(--font-secondary);
+    }
+
+    /* Responsive typography */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      h2.section-title {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>Artistry Photography</h1>
+    <p>Capturing your moments in timeless beauty. Book your 120-minute session today.</p>
+  </header>
+  <main>
+    <section aria-label="Gallery of photography samples">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Wedding photography of couple embracing" tabindex="0" />
+        <img src="https://images.unsplash.com/photo-1496284045406-d5b783b4b491?auto=format&fit=crop&w=600&q=80" alt="Portrait of a smiling woman outdoors" tabindex="0" />
+        <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=600&q=80" alt="Creative black and white artistic photo" tabindex="0" />
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Beautiful landscape with sun rays shining" tabindex="0" />
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Candid event photography capturing joy" tabindex="0" />
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80" alt="Macro photo of flower petal" tabindex="0" />
+      </div>
+    </section>
+    <section aria-label="Booking information and appointment form">
+      <h2 class="section-title">Book Your Appointment</h2>
+      <p class="booking-info">Each photography session lasts <strong>120 minutes</strong>. Please choose your preferred date, time, and location below. Sessions are available from 9:00 AM to 6:00 PM daily. We recommend booking at least 48 hours in advance.</p>
+      <form id="bookingForm" aria-label="Appointment booking form" novalidate>
+        <label for="name">Full Name<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+
+        <label for="email">Email Address<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+
+        <label for="phone">Phone Number<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 555 555 5555" autocomplete="tel" required />
+
+        <label for="location">Preferred Meeting Location<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <textarea id="location" name="location" rows="2" placeholder="Where would you like the session to take place?" required></textarea>
+
+        <label for="date">Choose a Date<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <input type="date" id="date" name="date" required min="" aria-describedby="dateHelp" />
+
+        <label for="time">Choose a Start Time<span aria-hidden="true" style="color: var(--accent-color);">*</span></label>
+        <input type="time" id="time" name="time" required step="1800" min="09:00" max="18:00" aria-describedby="timeHelp" />
+
+        <small id="dateHelp" style="display:block; margin-bottom:1rem; color: var(--secondary-color); font-size: 0.85rem;">Sessions available daily 9 AM - 6 PM.</small>
+        <small id="timeHelp" style="display:block; margin-bottom:1.5rem; color: var(--secondary-color); font-size: 0.85rem;">Start times are every 30 minutes; session lasts 120 minutes.</small>
+
+        <button type="submit">Proceed to Payment</button>
+        <div class="confirmation" id="confirmationMessage" role="alert"></div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 Artistry Photography. All rights reserved.
+  </footer>
+
+  <script>
+    (function(){
+      const bookingForm = document.getElementById('bookingForm');
+      const confirmationMessage = document.getElementById('confirmationMessage');
+      const dateInput = document.getElementById('date');
+      const timeInput = document.getElementById('time');
+
+      // Set today's date as min for date input
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      const minDate = `${yyyy}-${mm}-${dd}`;
+      dateInput.min = minDate;
+
+      // PayPal payment link settings - Replace YOUR_PAYPAL_ME_LINK_OR_BUYNOW_URL with actual merchant URL
+      // Example uses a PayPal "Buy Now" button URL with item name and price USD 150 for 120-min session
+      //
+      // IMPORTANT:
+      // Photographer should create a Buy Now button or PayPal.Me link configured with the amount $150 (or desired)
+      // Must set correct currency and price.
+      const PAYPAL_LINK = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=photographer@example.com&item_name=Photography+Session+120+Minutes&amount=150.00&currency_code=USD&return=https%3A%2F%2Fyourwebsite.com%2Fthankyou.html&cancel_return=https%3A%2F%2Fyourwebsite.com%2Fcancel.html";
+
+      bookingForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        confirmationMessage.style.display = 'none';
+        confirmationMessage.textContent = '';
+
+        // Validate required fields
+        if(!bookingForm.checkValidity()){
+          bookingForm.reportValidity();
+          return;
+        }
+
+        // Validate date (not in the past)
+        const selectedDate = new Date(dateInput.value + 'T00:00:00');
+        const now = new Date();
+        now.setHours(0,0,0,0);
+
+        if(selectedDate < now){
+          alert('Please select a valid date (today or later).');
+          dateInput.focus();
+          return;
+        }
+
+        // Validate time range
+        const [hours, minutes] = timeInput.value.split(':').map(Number);
+        if(hours < 9 || hours > 18 || (hours === 18 && minutes > 0)){
+          alert('Please select a start time between 9:00 and 18:00.');
+          timeInput.focus();
+          return;
+        }
+
+        // Check if session end time exceeds 20:00 (6 PM + 2 hours)
+        const sessionEndHour = hours + 2;
+        if(sessionEndHour > 20 || (sessionEndHour === 20 && minutes > 0)){
+          alert('Your 120-minute session cannot end after 8:00 PM. Please choose an earlier start time.');
+          timeInput.focus();
+          return;
+        }
+
+        // Collect booking details
+        const bookingDetails = {
+          name: bookingForm.name.value.trim(),
+          email: bookingForm.email.value.trim(),
+          phone: bookingForm.phone.value.trim(),
+          location: bookingForm.location.value.trim(),
+          date: dateInput.value,
+          time: timeInput.value
+        };
+
+        // Save booking details to localStorage to retrieve after payment or for record
+        localStorage.setItem('lastBooking', JSON.stringify(bookingDetails));
+
+        // Generate custom payment link with dynamic custom field including phone and location to pass information to PayPal
+        // PayPal allows a 'custom' parameter for developer use
+        // Note: The link below encodes booking info in the 'custom' parameter (max length may be limited)
+        // This helps the photographer identify the customer in payment details
+        const customData = encodeURIComponent(`Phone:${bookingDetails.phone};Location:${bookingDetails.location};Date:${bookingDetails.date};Time:${bookingDetails.time}`);
+
+        // Form base URL with fixed price and item info -- replace business email with actual email
+        const baseUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=photographer@example.com&item_name=Photography+Session+120+Minutes&amount=150.00&currency_code=USD";
+
+        const returnUrl = "https://yourwebsite.com/thankyou.html"; // Replace with your thank you page URL or keep off to stay on this page
+        const cancelUrl = "https://yourwebsite.com/cancel.html"; // Replace with your cancel URL
+
+        // Compose full URL for redirect to PayPal
+        // Include custom field and return URLs
+        let paymentUrl = baseUrl + "&custom=" + customData;
+        paymentUrl += "&return=" + encodeURIComponent(returnUrl);
+        paymentUrl += "&cancel_return=" + encodeURIComponent(cancelUrl);
+
+        // Redirect to PayPal payment page
+        window.location.href = paymentUrl;
+      });
+    })();
+  </script>
+
+  <!--
+  IMPORTANT:
+
+  To receive SMS notifications when a client completes a PayPal payment:
+
+  1. Set up PayPal Instant Payment Notification (IPN) or Webhook in your PayPal Business account.
+
+  2. Create or use an existing backend service to listen for IPN or webhook messages.
+
+  3. Inside your backend, parse the 'custom' field from the PayPal transaction which contains phone number, location, date and time.
+
+  4. Use an SMS API like Twilio to send a text message to the photographer's desired number, including the appointment booking details.
+
+  5. This frontend does not perform server-side operations; these integration steps require a backend server.
+
+  For a technical implementation, you might consider using platforms like Zapier or Integromat that can listen to PayPal IPN/Webhook and trigger SMS sending without your own code.
+
+  Contact me if you want help creating backend code or automated workflows.
+
+  -->
+
+</body>
+</html>
+

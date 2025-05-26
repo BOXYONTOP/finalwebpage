@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Base Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -8,21 +8,27 @@ body {
 
 /* Header */
 header {
-  background: #111;
+  background-color: #111;
   padding: 20px;
   text-align: center;
 }
+
 header h1 {
   margin: 0;
+  font-size: 2rem;
 }
+
 nav {
   margin-top: 10px;
 }
+
 nav a {
   color: #ccc;
   text-decoration: none;
   margin: 0 15px;
+  font-size: 1rem;
 }
+
 nav a:hover {
   color: #fff;
 }
@@ -31,65 +37,88 @@ nav a:hover {
 .hero-home {
   text-align: center;
   padding: 100px 20px;
-  background: #000;
-}
-.hero-home h2 {
-  font-size: 3rem;
-}
-.hero-home p {
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-/* HERO IMAGE Section */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 40px;
   background-image: url('Images/Gallary/Coach Hud hero.JPG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
+  border-radius: 10px;
 }
-.hero-img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 16px;
-  margin-right: 20px;
+
+.hero-home h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
-.hero-text {
-  flex: 1;
+
+.hero-home p {
+  font-size: 1.2rem;
+  color: #ddd;
 }
 
 /* Booking Section */
 .booking-cards {
   padding: 40px 20px;
 }
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+
+/* Card Styles */
 .card {
   background: #1a1a1a;
   padding: 20px;
   border-radius: 12px;
-  width: 280px;
+  width: 300px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .card img,
 .card video {
   width: 100%;
   border-radius: 8px;
 }
-.card h3 {
-  margin: 10px 0 5px;
+
+.card video {
+  object-fit: cover;
+  height: auto;
 }
+
+/* Card Content */
+.card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
 .card p {
   color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* Button */
+.btn,
+.booking-form button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.booking-form button:hover {
+  background: #ff0000;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Booking Form */
@@ -99,46 +128,23 @@ nav a:hover {
   gap: 10px;
   margin-top: 10px;
 }
-.booking-form input,
-.booking-form button {
-  padding: 12px 20px;
+
+.booking-form input {
+  padding: 10px;
   font-size: 1rem;
-  border: 2px solid #333;
-  border-radius: 999px; /* oval inputs */
+  border: 1px solid #333;
+  border-radius: 999px;
   background-color: #111;
   color: #fff;
-  transition: border-color 0.3s, background-color 0.3s;
+  transition: border 0.3s;
 }
-.booking-form input:hover,
+
 .booking-form input:focus {
   border-color: red;
-  background-color: #1a1a1a;
   outline: none;
 }
-.booking-form button {
-  background-color: #fff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-.booking-form button:hover {
-  background-color: #e00;
-  color: #fff;
-  border-color: red;
-}
 
-/* Button Style */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #fff;
-  color: #000;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-/* Gallery */
+/* Gallery Page */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -146,20 +152,19 @@ nav a:hover {
   gap: 16px;
   padding: 20px;
 }
+
 .gallery img {
   width: 300px;
   border-radius: 10px;
 }
 
-/* Responsive Adjustments */
+/* Responsive Improvements */
 @media (max-width: 768px) {
-  .hero {
+  .card-container {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
-  .hero-img {
-    margin: 0 0 20px 0;
-  }
+
   .card {
     width: 90%;
   }

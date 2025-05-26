@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book a Session – PC13 Media</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="firebase.js"></script>
 </head>
 <body>
 <header>
@@ -24,25 +25,14 @@
         <img src="Images/Gallary/Lax Indi.JPG" alt="Individual Photo">
         <h3>Individual Photo</h3>
         <p>$45 – A personal 1-on-1 photo session.</p>
-        <a href="https://paypal.me/yourlink1" class="btn">Book Now</a>
-      </div>
-      <div class="card">
-        <img src="Images/Gallary/Coach Kelly Team.JPG" alt="Team Photo">
-        <h3>Team Photos</h3>
-        <p>$85 – Capture your team with high-quality group shots.</p>
-        <a href="https://paypal.me/yourlink2" class="btn">Book Now</a>
-      </div>
-      <div class="card">
-        <img src="Images/Gallary/keenan gardner.mov" alt="Mixtape Video">
-        <h3>Individual Mixtape</h3>
-        <p>$85 – Personal highlight mixtape video.</p>
-        <a href="https://paypal.me/yourlink3" class="btn">Book Now</a>
-      </div>
-      <div class="card">
-        <img src="Images/Gallary/Sequence 01_1.mov" alt="Team Mixtape">
-        <h3>Team Mixtape</h3>
-        <p>$125 – Full team highlight video coverage.</p>
-        <a href="https://paypal.me/yourlink4" class="btn">Book Now</a>
+        <form class="booking-form" data-type="Individual Photo" data-price="45">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="phone" placeholder="Phone Number" required />
+          <input type="date" name="date" required />
+          <input type="text" name="location" placeholder="Session Location" required />
+          <button type="submit">Book Now</button>
+        </form>
       </div>
     </div>
   </section>

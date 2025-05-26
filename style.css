@@ -231,3 +231,25 @@ footer a:hover {
   height: 120px;
   border-radius: 10px;
 }
+.about-section {
+  padding: 60px 20px;
+  background-color: #0a0a0a;
+  color: #fff;
+  text-align: left;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #ccc;
+}

@@ -56,13 +56,11 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Hero Image Section */
+/* Hero Section */
 .hero-wrapper {
   overflow: hidden;
   text-align: center;
-  margin: 40px auto;
-  transform: scale(0.9);
-  transform-origin: top center;
+  margin: 20px auto 40px auto;
   max-width: 1200px;
 }
 
@@ -76,27 +74,14 @@ nav a:hover::after {
   height: auto;
   max-width: 100%;
   border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  object-position: top;
   transition: transform 0.3s ease;
 }
 
 .hero-image:hover {
   transform: scale(1.02);
-}
-
-/* Hero Text (optional headline section) */
-.hero-home {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero-home h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero-home p {
-  font-size: 1.1rem;
-  color: #ddd;
 }
 
 /* Booking Cards Section */
@@ -273,12 +258,8 @@ footer a:hover {
     width: 90%;
   }
 
-  .hero-home h2 {
-    font-size: 2rem;
-  }
-
-  .hero-home p {
-    font-size: 1rem;
+  .hero-image {
+    border-radius: 8px;
   }
 
   .gallery img,
@@ -292,7 +273,6 @@ footer a:hover {
   }
 
   .hero-wrapper {
-    transform: scale(1); /* Full width on mobile */
     padding: 0 10px;
   }
 }

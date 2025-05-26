@@ -7,116 +7,126 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>PC13 Media</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="booking.html">Book</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+<header>
+  <h1>PC13 Media</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="booking.html">Book</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="booking-cards">
-      <h2>Book a Session</h2>
-      <div class="card-container">
-        <!-- Individual Photo -->
-        <div class="card">
-          <img src="Images/Gallary/Lax Indi.JPG" alt="Individual Photo">
-          <h3>Individual Photo</h3>
-          <p>$45 – A personal 1-on-1 photo session.</p>
-          <form class="booking-form" data-type="Individual Photo" data-price="45">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <input type="date" name="date" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <button type="submit" class="btn">Book Now</button>
-          </form>
-        </div>
+<main>
+  <section class="booking-cards">
+    <h2>Book a Session</h2>
+    <div class="card-container">
 
-        <!-- Team Photo -->
-        <div class="card">
-          <img src="Images/Gallary/Coach Kelly Team.JPG" alt="Team Photo">
-          <h3>Team Photos</h3>
-          <p>$85 – Capture your team with high-quality group shots.</p>
-          <form class="booking-form" data-type="Team Photo" data-price="85">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <input type="date" name="date" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <button type="submit" class="btn">Book Now</button>
-          </form>
-        </div>
-
-        <!-- Individual Mixtape -->
-        <div class="card">
-          <video controls width="100%">
-            <source src="Images/Gallary/keenan gardner.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h3>Individual Mixtape</h3>
-          <p>$85 – Personal highlight mixtape video.</p>
-          <form class="booking-form" data-type="Individual Mixtape" data-price="85">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <input type="date" name="date" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <button type="submit" class="btn">Book Now</button>
-          </form>
-        </div>
-
-        <!-- Team Mixtape -->
-        <div class="card">
-          <video controls width="100%">
-            <source src="Images/Gallary/Sequence 01_1.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h3>Team Mixtape</h3>
-          <p>$125 – Full team highlight video coverage.</p>
-          <form class="booking-form" data-type="Team Mixtape" data-price="125">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <input type="date" name="date" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <button type="submit" class="btn">Book Now</button>
-          </form>
-        </div>
+      <!-- Individual Photo -->
+      <div class="card">
+        <img src="Images/Gallary/Lax Indi.JPG" alt="Individual Photo">
+        <h3>Individual Photo</h3>
+        <p>$45 – A personal 1-on-1 photo session.</p>
+        <form class="booking-form" data-type="Individual Photo" data-price="45">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="date" name="date" required>
+          <input type="text" name="location" placeholder="Location" required>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
       </div>
-    </section>
-  </main>
 
-  <!-- Firebase Config (your firebase.js must already contain this setup) -->
-  <script type="module" src="firebase.js"></script>
+      <!-- Team Photo -->
+      <div class="card">
+        <img src="Images/Gallary/Coach Kelly Team.JPG" alt="Team Photo">
+        <h3>Team Photos</h3>
+        <p>$85 – Capture your team with high-quality group shots.</p>
+        <form class="booking-form" data-type="Team Photo" data-price="85">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="date" name="date" required>
+          <input type="text" name="location" placeholder="Location" required>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </div>
 
-  <!-- PayPal + Form Submission Logic -->
-  <script>
-    document.querySelectorAll(".booking-form").forEach(form => {
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
+      <!-- Individual Mixtape -->
+      <div class="card">
+        <video controls preload="metadata" width="100%">
+          <source src="Images/Gallary/keenan gardner.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Individual Mixtape</h3>
+        <p>$85 – Personal highlight mixtape video.</p>
+        <form class="booking-form" data-type="Individual Mixtape" data-price="85">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="date" name="date" required>
+          <input type="text" name="location" placeholder="Location" required>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </div>
 
-        const type = this.dataset.type;
-        const price = this.dataset.price;
+      <!-- Team Mixtape -->
+      <div class="card">
+        <video controls preload="metadata" width="100%">
+          <source src="Images/Gallary/Sequence 01_1.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Team Mixtape</h3>
+        <p>$125 – Full team highlight video coverage.</p>
+        <form class="booking-form" data-type="Team Mixtape" data-price="125">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <input type="date" name="date" required>
+          <input type="text" name="location" placeholder="Location" required>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </div>
 
-        const name = this.name.value.trim();
-        const email = this.email.value.trim();
-        const phone = this.phone.value.trim();
-        const date = this.date.value;
-        const location = this.location.value.trim();
+    </div>
+  </section>
+</main>
 
-        // Optional: Store to Firebase here if needed
+<script type="module" src="firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("Ot4JYqb9veW0vr2yQ");
+  })();
 
-        const paypalUsername = "prestonchadwell";
-        const note = `Booking: ${type}, Name: ${name}, Email: ${email}, Phone: ${phone}, Date: ${date}, Location: ${location}`;
-        const paypalLink = `https://paypal.me/${paypalUsername}/${price}?note=${encodeURIComponent(note)}`;
+  document.querySelectorAll('.booking-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        window.location.href = paypalLink;
-      });
+      const bookingType = form.getAttribute('data-type');
+      const price = form.getAttribute('data-price');
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        date: form.date.value,
+        location: form.location.value,
+        session_type: bookingType,
+        session_price: price
+      };
+
+      emailjs.send('service_4963v33', 'template_jyhkfqq', formData)
+        .then(() => {
+          alert("Booking submitted. You'll now be taken to PayPal to complete payment.");
+          window.location.href = `https://paypal.me/prestonchadwell/${price}`;
+        })
+        .catch(err => {
+          alert("There was an error sending your booking. Please try again.");
+          console.error(err);
+        });
     });
-  </script>
+  });
+</script>
 </body>
 </html>

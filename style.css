@@ -70,9 +70,9 @@ nav a:hover::after {
 }
 
 .hero-image {
-  width: 100%;
+  width: 200%;
   height: auto;
-  max-width: 100%;
+  max-width: 200%;
   border-radius: 12px;
   display: block;
   object-fit: cover;

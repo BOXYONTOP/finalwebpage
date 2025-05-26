@@ -90,7 +90,33 @@
     </section>
   </main>
 
-  <!-- Load Firebase script at the bottom -->
+  <!-- Firebase Config (your firebase.js must already contain this setup) -->
   <script type="module" src="firebase.js"></script>
+
+  <!-- PayPal + Form Submission Logic -->
+  <script>
+    document.querySelectorAll(".booking-form").forEach(form => {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const type = this.dataset.type;
+        const price = this.dataset.price;
+
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const phone = this.phone.value.trim();
+        const date = this.date.value;
+        const location = this.location.value.trim();
+
+        // Optional: Store to Firebase here if needed
+
+        const paypalUsername = "prestonchadwell";
+        const note = `Booking: ${type}, Name: ${name}, Email: ${email}, Phone: ${phone}, Date: ${date}, Location: ${location}`;
+        const paypalLink = `https://paypal.me/${paypalUsername}/${price}?note=${encodeURIComponent(note)}`;
+
+        window.location.href = paypalLink;
+      });
+    });
+  </script>
 </body>
 </html>

@@ -98,3 +98,38 @@ nav a:hover {
 .hero-text {
   flex: 1;
 }
+/* Booking Form Styling */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.booking-form input,
+.booking-form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #111;
+  color: #fff;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.booking-form input:focus {
+  border-color: #007BFF;
+  background-color: #1a1a1a;
+  outline: none;
+}
+
+.booking-form button {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-form button:hover {
+  background-color: #0056b3;
+}

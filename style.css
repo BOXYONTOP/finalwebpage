@@ -71,7 +71,7 @@ nav a:hover::after {
 
 .hero-image {
   width: 100vw;
-  height: 600px;
+  height: 400px; /* Smaller height */
   max-width: 100%;
   object-fit: cover;
   object-position: top;
@@ -258,6 +258,11 @@ footer a:hover {
     width: 90%;
   }
 
+  .hero-image {
+    height: 240px; /* Smaller mobile image */
+    border-radius: 8px;
+  }
+
   .gallery img,
   .gallery video {
     width: 90%;
@@ -266,10 +271,6 @@ footer a:hover {
 
   .about-section img {
     height: auto;
-  }
-
-  .hero-image {
-    height: 300px;
   }
 
   .hero-wrapper {

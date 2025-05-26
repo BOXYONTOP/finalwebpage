@@ -56,7 +56,34 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Hero Section */
+/* Hero Image Section */
+.hero-wrapper {
+  overflow: hidden;
+  text-align: center;
+  margin: 40px auto;
+  transform: scale(0.9);
+  transform-origin: top center;
+  max-width: 1200px;
+}
+
+.hero-wrapper a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02);
+}
+
+/* Hero Text (optional headline section) */
 .hero-home {
   padding: 60px 20px;
   text-align: center;
@@ -71,16 +98,6 @@ nav a:hover::after {
   font-size: 1.1rem;
   color: #ddd;
 }
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 600px; /* or any height that fits your layout */
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-
 
 /* Booking Cards Section */
 .booking-cards {
@@ -272,5 +289,10 @@ footer a:hover {
 
   .about-section img {
     height: auto;
+  }
+
+  .hero-wrapper {
+    transform: scale(1); /* Full width on mobile */
+    padding: 0 10px;
   }
 }

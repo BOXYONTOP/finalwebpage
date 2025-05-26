@@ -75,11 +75,12 @@ nav a:hover::after {
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 900px;
-  border-radius: 10px;
+  max-height: 600px; /* or any height that fits your layout */
   object-fit: cover;
-  margin-top: 40px;
+  border-radius: 10px;
+  display: block;
 }
+
 
 /* Booking Cards Section */
 .booking-cards {

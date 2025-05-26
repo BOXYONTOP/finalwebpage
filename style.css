@@ -279,3 +279,10 @@ footer a:hover {
     padding: 0 10px;
   }
 }
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 20px;
+  text-align: center;
+}

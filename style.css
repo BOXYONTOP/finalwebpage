@@ -57,30 +57,40 @@ nav a:hover::after {
 }
 
 /* Hero Section */
-.hero-wrapper {
-  width: 90%;
+.hero-section {
+  width: 100%;
+  margin: 0 auto 40px auto;
   overflow: hidden;
-  text-align: center;
-  margin: 20px auto 40px auto;
 }
 
-.hero-wrapper a {
+.hero-section a {
   display: block;
-  text-decoration: none;
 }
 
-.hero-image {
-  width: 90%;
-  height: auto;
-  display: block;
+.hero-section img {
+  width: 100%;
+  max-height: 620px;
   object-fit: cover;
-  object-position: center top;
-  border-radius: 0;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.hero-image:hover {
+.hero-section img:hover {
   transform: scale(1.01);
+}
+
+/* Intro Text */
+.intro-text {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
 }
 
 /* Booking Cards */
@@ -192,7 +202,7 @@ nav a:hover::after {
   border-radius: 10px;
 }
 
-/* About */
+/* About Section */
 .about-section {
   padding: 60px 20px;
   max-width: 900px;
@@ -229,6 +239,10 @@ footer {
   background: #111;
 }
 
+footer p {
+  margin-bottom: 10px;
+}
+
 footer a {
   color: #ccc;
   margin: 0 10px;
@@ -240,7 +254,7 @@ footer a:hover {
   color: red;
 }
 
-/* Index Section */
+/* Index Section (if needed) */
 .index-section {
   display: flex;
   flex-direction: column;
@@ -257,18 +271,11 @@ footer a:hover {
   max-width: 800px;
   margin: 0 auto;
 }
-.hero-section img {
-     width: 100%;
-  max-height: 620px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 30px;
-}
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Tweaks for Tablets & Mobile */
+@media (max-width: 1024px) {
   .card {
-    width: 90%;
+    width: 45%;
   }
 
   .gallery img,
@@ -277,20 +284,67 @@ footer a:hover {
     height: auto;
   }
 
+  .hero-section img {
+    max-height: 380px;
+  }
+
   .about-section img {
-    height: auto;
+    max-height: 380px;
   }
 
-  .index-section {
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 10px;
+    font-size: 0.95rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .booking-form {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .about-section,
+  .index-section,
+  .intro-text {
     padding: 30px 15px;
+    text-align: center;
   }
 
-  .index-section p {
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .index-section p,
+  .about-section p,
+  .intro-text p {
     font-size: 1rem;
   }
 
+  .gallery {
+    gap: 12px;
+  }
+
   .hero-section img {
-    max-height: 280px;
+    max-height: 240px;
   }
 }
-  

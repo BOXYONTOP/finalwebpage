@@ -58,7 +58,7 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero-wrapper {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
   text-align: center;
   margin: 20px auto 40px auto;
@@ -70,7 +70,7 @@ nav a:hover::after {
 }
 
 .hero-image {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: block;
   object-fit: cover;

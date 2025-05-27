@@ -284,3 +284,10 @@ footer a:hover {
   border-radius: 10px;
   margin-top: 30px;
 }
+  .intro-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+    

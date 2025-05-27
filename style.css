@@ -72,10 +72,10 @@ nav a:hover::after {
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 700px;
-  object-fit: cover;
-  object-position: top center;
   display: block;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
   transition: transform 0.3s ease;
 }
 
@@ -264,11 +264,6 @@ footer a:hover {
     width: 90%;
   }
 
-  .hero-image {
-    max-height: 280px;
-    object-position: center top;
-  }
-
   .gallery img,
   .gallery video {
     width: 90%;
@@ -285,5 +280,9 @@ footer a:hover {
 
   .index-section p {
     font-size: 1rem;
+  }
+
+  .hero-image {
+    max-height: 280px;
   }
 }

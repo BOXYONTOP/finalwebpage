@@ -71,7 +71,7 @@ nav a:hover::after {
 
 .hero-image {
   width: 100vw;
-  height: 400px; /* Smaller height */
+  height: 4000px; /* Smaller height */
   max-width: 100%;
   object-fit: cover;
   object-position: top;

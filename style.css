@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -58,10 +58,10 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero-wrapper {
+  width: 100%;
   overflow: hidden;
   text-align: center;
   margin: 20px auto 40px auto;
-  max-width: 100%;
 }
 
 .hero-wrapper a {
@@ -74,9 +74,8 @@ nav a:hover::after {
   height: auto;
   max-height: 700px;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
   display: block;
-  border-radius: 0;
   transition: transform 0.3s ease;
 }
 
@@ -84,7 +83,7 @@ nav a:hover::after {
   transform: scale(1.01);
 }
 
-/* Booking Cards Section */
+/* Booking Cards */
 .booking-cards {
   padding: 60px 20px;
 }
@@ -123,7 +122,6 @@ nav a:hover::after {
 }
 
 .card h3 {
-  margin-top: 10px;
   font-size: 1.3rem;
 }
 
@@ -135,14 +133,13 @@ nav a:hover::after {
 /* Buttons */
 .btn,
 .booking-form button {
-  display: inline-block;
   padding: 10px 20px;
   background: #fff;
   color: #000;
   border-radius: 999px;
-  text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
 }
@@ -158,11 +155,9 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
-  width: 100%;
+  margin: 20px auto 0;
   max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 
 .booking-form input {
@@ -197,20 +192,18 @@ nav a:hover::after {
   border-radius: 10px;
 }
 
-/* About Section */
+/* About */
 .about-section {
   padding: 60px 20px;
-  background-color: #0a0a0a;
-  color: #fff;
-  text-align: left;
   max-width: 900px;
   margin: auto;
+  text-align: left;
 }
 
 .about-section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ff0000;
+  color: red;
   text-align: center;
 }
 
@@ -250,9 +243,9 @@ footer a:hover {
 /* Index Section */
 .index-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   min-height: 50vh;
   padding: 20px;
   text-align: center;
@@ -267,19 +260,13 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .card {
     width: 90%;
   }
 
   .hero-image {
-    height: auto;
-    max-height: 300px;
-    border-radius: 8px;
+    max-height: 280px;
+    object-position: center top;
   }
 
   .gallery img,
@@ -290,10 +277,6 @@ footer a:hover {
 
   .about-section img {
     height: auto;
-  }
-
-  .hero-wrapper {
-    padding: 0 10px;
   }
 
   .index-section {

@@ -290,5 +290,6 @@ footer a:hover {
     font-size: 1.2rem;
     color: #ccc;
     max-width: 800px;
-    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
   }

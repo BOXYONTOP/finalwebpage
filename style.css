@@ -70,11 +70,11 @@ nav a:hover::after {
 }
 
 .hero-image {
-  width: 100vw;
-  height: 700px; /* Smaller height */
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   display: block;
   border-radius: 0;
   transition: transform 0.3s ease;
@@ -247,6 +247,24 @@ footer a:hover {
   color: red;
 }
 
+/* Index Section */
+.index-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.index-section p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .card-container {
@@ -259,7 +277,8 @@ footer a:hover {
   }
 
   .hero-image {
-    height: 240px; /* Smaller mobile image */
+    height: auto;
+    max-height: 300px;
     border-radius: 8px;
   }
 
@@ -276,20 +295,12 @@ footer a:hover {
   .hero-wrapper {
     padding: 0 10px;
   }
-}
-  .hero-section img {
-  width: 100%;
-  max-height: 620px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 30px;
-}
-  .index-section p {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #ccc;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+
+  .index-section {
+    padding: 30px 15px;
   }
+
+  .index-section p {
+    font-size: 1rem;
+  }
+}
